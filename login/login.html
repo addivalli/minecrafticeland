@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="jumbotron" style="padding-bottom:0px;">
+        <h2>MC Ísland</h2>
+    </div>
+
+    <!-- Þetta form heldur utan um innskráningu, og heitir 'signinForm' -->
+    <form class="form-signin" role="form">
+        <!-- Netfangs hlutinn -->
+        <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
+
+            <label>Netfang</label>
+            <input type="email" name="email" class="form-control" ng-model="email" value="kennari@tskoli.is">
+            <p class="help-block" ng-show="signinForm.email.$invalid">Skrifið viðeigandi netfang.</p>
+
+        </div>
+        <!-- lykilorðs hlutinn -->
+        <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
+
+            <label>Lykilorð</label>
+            <input type="password" name="password" class="form-control" ng-model="pass" ng-minlength="3" value="asdf1234">
+            <p class="help-block" ng-show="signinForm.password.$error.minlength">Skrifið minnst 8 stafa lykilorð.</p>
+
+        </div>
+        <!-- Innskráningartakki Signin($event) er lykilvirknin ásamt ng-disabled sem hlustar á ofanverðu innstimplarnir -->
+        <button class="btn btn-lg btn-primary btn-block" ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
+    </form>
+
+</div>

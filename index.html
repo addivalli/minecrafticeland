@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MC_web">
+
+<head>
+ 	<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+ 	<meta name="description" content="minecraft education">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	
+ 	<title>MC Iceland</title>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+
+    <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/justified-nav.css" rel="stylesheet">
+    <link href="assets/css/bootstrap/signin.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
+
+</head>
+
+<body ng-cloak ng-controller="HomeCtrl">
+
+	<!-- Headerinn -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+			<ul class="nav navbar-nav">
+				<li ng-show="LoggedIn"><a href="#/forsida/minecraft">Minecraft</a></li>
+		        <li ng-show="LoggedIn"><a href="#/forsida/history">Sagan</a></li>
+				<li class="dropdown">
+
+				<a ng-show="LoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Modding <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li ng-show="LoggedIn"><a href="#">Forge</a></li>
+					<li ng-show="LoggedIn"><a href="#">Mod Pakkar</a></li>
+					<li ng-show="LoggedIn"><a href="#">Texture Pakkar</a></li>
+				</ul>
+				</li>
+				<li ng-show="LoggedIn"><a href="#/forsida/videos">Videos</a></li>
+		        <li ng-show="LoggedIn"><a href="#/forsida/items">Items</a></li>
+			</ul>
+
+			<!-- Hægra meginn á Navbarinu -->
+			<ul class="nav navbar-nav navbar-right ">
+				<li class="dropdown">
+					<li href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Notandi <span class="caret"></span></li>
+					<ul class="dropdown-menu " role="menu">
+						<li ng-hide="LoggedIn"><a href="#/login">Login</a></li>
+						<li ng-show="LoggedIn"><a href="#/account">Prófíll</a></li>
+					</ul>
+				</li>
+			</ul>
+
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+</nav>
+	<!-- View-ið á síðunni -->
+	<div id="main_content" ng-view></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.1.0/angularfire.min.js"></script>
+
+	<script src="components/app.js"></script>
+	<script src="components/config.js"></script>
+
+  	<script src="components/auth/auth.js"></script>
+	<script src="components/firebase.utils/firebase.utils.js"></script>
+	<script src="components/security/security.js"></script>
+	<script src="components/mockfirebase/mockfirebase.js"></script>
+	
+	<script src="login/login.js"></script>
+	<script src="account/account.js"></script>
+
+</body>
+</html>

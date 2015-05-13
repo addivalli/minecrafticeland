@@ -1,42 +1,49 @@
+<div class="content">
+    <!--
 
-<h2>Account</h2>
+        Á eftir að smíða betra viðmót til að móta profile, ætla reyna höfða þetta til krakka.
+        TODO: messageboard.
 
+     -->
 <form>
     <fieldset>
-        <legend>Profile</legend>
+        <legend>Prófíll</legend>
 
         <label>
-            <span>Name:</span>
+            <span>Nafn:</span>
             <input type="text" name="name" ng-model="profile.name"/>
         </label>
-
+        <br>
         <label>
-            <span>Email:</span>
-            <br />{{profile.email}}
+            <span>Nafn:</span>{{profile.name}}
+        </label>
+        <br>
+        <label>
+            <span>Email:</span>{{profile.email}}
         </label>
     </fieldset>
 </form>
 
 <form>
     <fieldset>
-        <legend>Change Password</legend>
+        <legend>Breyta lykilorði:</legend>
 
         <label>
-            <span>Old Password:</span>
+            <span>Gamla lykilorðið:</span>
             <input type="password" ng-keypress="clear()" ng-model="oldpass"/>
         </label>
 
         <label>
-            <span>New Password:</span>
+            <span>Nýja lykilorðið:</span>
             <input type="password" ng-keypress="clear()" ng-model="newpass"/>
         </label>
 
         <label>
-            <span>Confirm New Password:</span>
+            <span>Staðfesta lykilorðið:</span>
             <input type="password" ng-keypress="clear()" ng-model="confirm"/>
         </label>
 
-        <button ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
+        <button type="button" class="btn btn-info" ng-click="changePassword(oldpass, newpass, confirm)">Breyta lykilorði</button>
 
         <p class="error" ng-show="err">{{err}}</p>
         <p class="good" ng-show="msg">{{msg}}</p>
@@ -45,23 +52,25 @@
 
 <form>
     <fieldset>
-        <legend>Change Email</legend>
+        <legend>Breyta um netfang</legend>
 
         <label>
-            <span>New Email:</span>
+            <span>Nýtt netfang:</span>
             <input type="text" ng-keypress="clear()" ng-model="newEmail"/>
         </label>
 
         <label>
-            <span>Password:</span>
+            <span>Lykilorð:</span>
             <input type="password" ng-keypress="clear()" ng-model="pass"/>
         </label>
 
-        <button ng-click="changeEmail(pass, newEmail)">update email</button>
+        <button type="button" class="btn btn-info" ng-click="changeEmail(pass, newEmail)">Uppfæra netfang</button>
 
         <p class="error" ng-show="emailerr">{{emailerr}}</p>
         <p class="good" ng-show="emailmsg">{{emailmsg}}</p>
     </fieldset>
 </form>
+<br>
+<button type="button" class="btn btn-danger" ng-click="logout()">Log Out</button>
 
-<button ng-click="logout()">Log Out</button>
+</div>

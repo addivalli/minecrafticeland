@@ -19,7 +19,7 @@
 
 </head>
 
-<body ng-cloak ng-controller="HomeCtrl">
+<body ng-cloak ng-controller="MainCtrl">
 
 	<!-- Headerinn -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -38,19 +38,19 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 			<ul class="nav navbar-nav">
-				<li ng-show="LoggedIn"><a href="#/forsida/minecraft">Minecraft</a></li>
-		        <li ng-show="LoggedIn"><a href="#/forsida/history">Sagan</a></li>
+				<li ng-show="LoggedIn"><a href="#/minecraft">Minecraft</a></li>
+		        <li ng-show="LoggedIn"><a href="#/history">Sagan</a></li>
 				<li class="dropdown">
 
-				<a ng-show="LoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Modding <span class="caret"></span></a>
+				<a ng-show="LoggedIn" href="#/modding" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Modding <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
-					<li ng-show="LoggedIn"><a href="#">Forge</a></li>
-					<li ng-show="LoggedIn"><a href="#">Mod Pakkar</a></li>
-					<li ng-show="LoggedIn"><a href="#">Texture Pakkar</a></li>
+					<li ng-show="LoggedIn"><a href="#/modding/forge">Forge</a></li>
+					<li ng-show="LoggedIn"><a href="#/modding/modpacks">Mod Pakkar</a></li>
+					<li ng-show="LoggedIn"><a href="#/modding/texturepacks">Texture Pakkar</a></li>
 				</ul>
 				</li>
-				<li ng-show="LoggedIn"><a href="#/forsida/videos">Videos</a></li>
-		        <li ng-show="LoggedIn"><a href="#/forsida/items">Items</a></li>
+				<li ng-show="LoggedIn"><a href="#/videos">Videos</a></li>
+		        <li ng-show="LoggedIn"><a href="#/items">Items</a></li>
 			</ul>
 
 			<!-- Hægra meginn á Navbarinu -->
@@ -84,7 +84,12 @@
 	<script src="components/mockfirebase/mockfirebase.js"></script>
 	
 	<script src="login/login.js"></script>
-	<script src="account/account.js"></script>
+	<script src="views/minecraft/minecraft.js"></script>
+	<script src="views/account/account.js"></script>
+	<script src="views/history/history.js"></script>
+	<script src="views/modding/modding.js"></script>
+	<script src="views/videos/videos.js"></script>
+	<script src="views/items/items.js"></script>
 
 </body>
 </html>

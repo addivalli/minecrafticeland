@@ -1,4 +1,4 @@
-angular.module('MC_web.account', ['firebase', 'firebase.utils', 'firebase.auth', 'ngRoute'])
+angular.module('MC_web.views.account', ['firebase', 'firebase.utils', 'firebase.auth', 'ngRoute'])
 
 .controller('AccountCtrl', ['$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
     function($scope, Auth, fbutil, user, $location, $firebaseObject) {
@@ -69,7 +69,7 @@ angular.module('MC_web.account', ['firebase', 'firebase.utils', 'firebase.auth',
     // this is handled by the .whenAuthenticated method declared in
     // components/router/router.js
     $routeProvider.whenAuthenticated('/account', {
-      templateUrl: 'account/account.html',
+      templateUrl: 'views/account/account.html',
       controller: 'AccountCtrl'
     })
   }]);
